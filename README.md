@@ -29,8 +29,11 @@ curses is not installed on your system, you may use the free ncurses
 package.  The game does not work with BSD curses, thus on BSD systems
 you will need the ncurses package.
 
-   Generic installation instructions are in the file INSTALL.  There
-are some points of interest:
+   You may need to run 'autoreconf -i'.  Also, the 'texinfo' package could
+prove useful.
+
+   After running autotools, you will find generic installation instructions in
+the file INSTALL.  There are some points of interest:
 
    * By default, the program will be installed as
      '/usr/local/bin/moon-buggy'.  You can specify an installation
