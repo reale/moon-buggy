@@ -1,6 +1,7 @@
 /* moon-buggy.h - global moon-buggy header file
  *
  * Copyright 1999, 2000  Jochen Voss
+ * Copyright 2017        Roberto Reale
  */
 
 #ifndef FILE_MOON_BUGGY_H_SEEN
@@ -18,7 +19,7 @@
 #endif
 #include CURSES_HEADER
 
-#define TICK(x) ((x)*0.08/(MB_SPEED))
+#define TICK(x) ((x)*0.08/(mb_speed))
 #define BASELINE (LINES-5)
 
 
@@ -63,6 +64,7 @@ extern  struct mode *pager_mode;
 extern  void  setup_pager_mode (void);
 
 /* from "game.c" */
+extern  double  mb_speed;
 extern  struct mode *game_mode;
 extern  struct mode *crash_mode;
 extern  int  crash_detected;
@@ -149,7 +151,9 @@ enum mb_key {
   mbk_jump = 32, mbk_last = 64, mbk_pagedown = 128, mbk_pageup = 256,
   mbk_start = 512, mbk_up = 1024, mbk_warranty = 2048, mbk_scores = 4096,
 
-  mbk_redraw = 8192		/* specially handled in `mode_keypress' */
+  mbk_redraw = 8192,		/* specially handled in `mode_keypress' */
+
+  mbk_faster = 16384
 };
 struct binding {
   int  meanings;

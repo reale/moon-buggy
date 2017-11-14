@@ -1,10 +1,11 @@
 ## Process this file with automake to produce Makefile.in
 # Copyright 1999, 2000, 2001  Jochen Voss
+# Copyright 2017              Roberto Reale
 
 EXTRA_DIST = manpage.in car.img \
 	text2c.sed img.sed ANNOUNCE moon-buggy.lsm \
 	moon-buggy.png moon-buggy.xpm title.eps
-DISTCLEANFILES = moon-buggy.6
+DISTCLEANFILES = moon-buggy.6 moon-buggy.info
 
 AM_CPPFLAGS = @CURSES_INCLUDEDIR@
 

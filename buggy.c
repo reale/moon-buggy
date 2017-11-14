@@ -1,6 +1,7 @@
 /* buggy.c - implement the moon buggy
  *
- * Copyright 1999, 2004  Jochen Voss  */
+ * Copyright 1999, 2004  Jochen Voss
+ * Copyright 2017        Roberto Reale */
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -26,18 +27,18 @@ typedef  struct scene {
 }  scenario [];
 
 static  scenario  sz_empty = {
-  { car_NORMAL, 5, TICK(1), 1 },
-  { car_NORMAL1, 5, TICK(2.5), 1 },
-  { car_NORMAL2, 5, TICK(4), 1 },
-  { car_NORMAL3, 5, TICK(5.5), 1 }
+  { car_NORMAL, 5, 1, 1 },
+  { car_NORMAL1, 5, 2.5, 1 },
+  { car_NORMAL2, 5, 4, 1 },
+  { car_NORMAL3, 5, 5.5, 1 }
 };
 
 static scenario sz_jump = {
-  { car_START, 5, TICK(1), 0 },
-  { car_UP1, 6, TICK(2.5), 0 },
-  { car_UP2, 7, TICK(5), 0 },
-  { car_UP1, 6, TICK(2.5), 0 },
-  { car_LAND, 5, TICK(2.5), 1 },
+  { car_START, 5, 1, 0 },
+  { car_UP1, 6, 2.5, 0 },
+  { car_UP2, 7, 5, 0 },
+  { car_UP1, 6, 2.5, 0 },
+  { car_LAND, 5, 2.5, 1 },
   { car_NORMAL, 5, -1, 1 }
 };
 
@@ -46,8 +47,8 @@ static  scenario  sz_crash = {
 };
 
 static  scenario  sz_ram = {
-  { car_RAM1, 5, TICK(1), 0 },
-  { car_RAM2, 5, TICK(0.5), 0 },
+  { car_RAM1, 5, 1, 0 },
+  { car_RAM2, 5, 0.5, 0 },
   { car_RAM3, 5, -1, 0 }
 };
 
@@ -180,8 +181,8 @@ jump_handler (game_time t, void *client_data)
     }
   }
   print_buggy ();
-  if (state->dt >= -0.5) {
-    add_event (t+state->dt, jump_handler, state+1);
+  if (TICK(state->dt) > 0) {
+    add_event (t+TICK(state->dt), jump_handler, state+1);
   }
 }
 

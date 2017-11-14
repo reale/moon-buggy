@@ -1,6 +1,7 @@
 /* game.c - play the game
  *
- * Copyright 1999, 2000  Jochen Voss  */
+ * Copyright 1999, 2000  Jochen Voss
+ * Copyright 2017        Roberto Reale */
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -14,6 +15,7 @@
 struct mode *game_mode;
 struct mode *crash_mode;
 
+double  mb_speed;
 
 int  crash_detected;		/* a crash is in progress */
 static  int  level;		/* the current level (crash_mode only) */
@@ -21,6 +23,15 @@ static  int  lives;		/* cars left (including the current one) */
 static  int  score;		/* points we already got */
 int  stakes;			/* points to get, when we reach the ground */
 
+#define MPH_PER_MB_SPEED 60
+
+void
+print_speed (void)
+{
+  double mph = MPH_PER_MB_SPEED * (mb_speed / MB_SPEED);
+  mvwprintw (status, 0, car_base-53, "speed: %6.2f mph", mph);
+  wnoutrefresh (status);
+}
 
 void
 adjust_score (int val)
@@ -72,6 +83,9 @@ game_enter (int seed)
   resize_ground (1);
   level_start (level);
 
+  mb_speed = MB_SPEED;
+  print_speed ();
+
   crash_detected = 0;
   stakes = 0;
   initialise_buggy ();
@@ -101,6 +115,14 @@ game_redraw (void)
 }
 
 static void
+scroll_faster (void)
+{
+  mb_speed += mb_speed * 0.1;
+  print_speed ();
+  return;
+}
+
+static void
 key_handler (game_time t, int val)
 {
   switch (val) {
@@ -114,6 +136,9 @@ key_handler (game_time t, int val)
     lives = 1;
     print_message ("aborted at user's request");
     mode_change (crash_mode, 0);
+    break;
+  case 4:
+    if (! crash_detected)  scroll_faster ();
     break;
   }
 }
@@ -212,6 +237,7 @@ setup_game_mode (void)
   mode_add_key (game_mode, mbk_jump, "jump", 1);
   mode_add_key (game_mode, mbk_fire, "fire", 2);
   mode_add_key (game_mode, mbk_end, "abort game", 3);
+  mode_add_key (game_mode, mbk_faster, "faster", 4);
   mode_complete (game_mode);
 
   crash_mode = new_mode ();

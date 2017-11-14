@@ -14,6 +14,7 @@
 This file documents moon-buggy, a simple character graphics game.
 
 Copyright 1999, 2000 Jochen Vo@ss{}
+Copyright 2017       Roberto Reale
 
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
@@ -49,6 +50,7 @@ translation approved by the Free Software Foundation.
 @page
 @vskip 0pt plus 1filll
 Copyright @copyright{} 1999, 2000 Jochen Vo@ss{}
+Copyright @copyright{} 2017       Roberto Reale
 
 Published by Jochen Vo@ss{}
 
@@ -160,6 +162,8 @@ block your way.
 @item q
 quits the game prematurely.  But you still keep your score and may enter
 the highscore list.
+@item f
+scrolls faster.
 @end table
 
 Moon-buggy can handle a wide range of screen sizes.  But it runs best

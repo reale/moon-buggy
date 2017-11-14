@@ -1,6 +1,7 @@
 /* keyboard.c - translate key codes to key meanings
  *
- * Copyright 1999, 2000  Jochen Voss.  */
+ * Copyright 1999, 2000  Jochen Voss
+ * Copyright 2017        Roberto Reale */
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -93,6 +94,8 @@ install_keys (void)
 
   add_key (' ', mbk_jump, 100);
   add_key ('j', mbk_jump, 50);
+
+  add_key ('f', mbk_faster, 100);
 
   add_key ('>', mbk_last, 90);
 #ifdef KEY_END

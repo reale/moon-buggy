@@ -1,5 +1,6 @@
 .\" manpage.in - template for the "moon-buggy.6" manual page
 .\" Copyright 1999, 2000  Jochen Voss
+.\" Copyright 2017        Roberto Reale
 .de Op
 .BR \-\\$1 @C@ ", " \-\-\\$2
 ..
@@ -48,6 +49,8 @@ block your way.
 quits the game prematurely.
 But you still keep your score and may
 enter the highscore list.
+.IP f
+scrolls faster.
 .IP 
 .SH FILES
 The following files on your system are related to moon\-buggy.
