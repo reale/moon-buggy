@@ -1,11 +1,7 @@
-# moon-buggy
-
-Drive some car across the moon.
-
-The classical ascii-art game by [Jochen Voss](https://github.com/seehuhn), with a patch by [Roberto Reale](https://github.com/robertoreale).
+moon-buggy - drive some car across the moon
 
 
-## Introduction
+INTRODUCTION:
 
    Moon-buggy is a simple character graphics game, where you drive some
 kind of car across the moon's surface.  Unfortunately there are
@@ -22,7 +18,7 @@ Your message should include the moon-buggy version number, as obtained
 by the command 'moon-buggy -V'.
 
 
-## Installation
+INSTALLATION:
 
    Moon-buggy requires the curses library as a prerequisite.  If
 curses is not installed on your system, you may use the free ncurses
