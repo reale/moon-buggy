@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(moon-buggy, 1.0.51 with go-faster patch by Roberto Reale <rober.reale@gmail.com>, voss@seehuhn.de)
+AC_INIT(moon-buggy, 1.0.52-go-faster, voss@seehuhn.de)
 AC_CONFIG_SRCDIR([moon-buggy.h])
 AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
