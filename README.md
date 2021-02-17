@@ -2,7 +2,17 @@
 
 Drive some car across the moon.
 
-The classical ascii-art game by [Jochen Voss](https://github.com/seehuhn), with a patch by [Roberto Reale](https://github.com/robertoreale).
+The classical ascii-art game by [Jochen Voss](https://github.com/seehuhn), with
+a few patches of mine.
+
+## Rationale
+
+`moon-buggy` is an extremely simple game, yet one written with clarity and with
+an obvious pedagogical goal in mind—as far as the code is concerned, as a
+matter of fact.
+
+I decided to write little patches in the mid 2000s, to teach myself basic data
+structures and algorithms in C.
 
 ## Installation
 
@@ -13,3 +23,6 @@ Should you wish to compile from sources, a preliminary
     $ autoreconf --install
 
 might be needed.
+
+
+*— Roberto Reale*
