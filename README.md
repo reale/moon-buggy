@@ -5,6 +5,8 @@ Drive some car across the moon.
 The classical ascii-art game by [Jochen Voss](https://github.com/seehuhn), with
 a patch of mine.
 
+![moon-buggy](moon-buggy.png)
+
 ## Rationale
 
 `moon-buggy` is an extremely simple game, yet one written with clarity and with
