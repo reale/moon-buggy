@@ -37,6 +37,7 @@ print_title (void)
 
   mvwaddstr (moon, 0, 0, "  Moon-Buggy version "
              VERSION ", Copyright 2004 Jochen Voss <voss@seehuhn.de>\n");
+  waddstr (moon, "  With patches by Roberto Reale <roberto@reale.me>\n");
   waddstr (moon, "  Moon-Buggy comes with ABSOLUTELY NO WARRANTY;"
            " for details type 'w'.\n");
   waddstr (moon,
