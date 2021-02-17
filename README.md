@@ -3,7 +3,7 @@
 Drive some car across the moon.
 
 The classical ascii-art game by [Jochen Voss](https://github.com/seehuhn), with
-a few patches of mine.
+a patch of mine.
 
 ## Rationale
 
@@ -11,8 +11,8 @@ a few patches of mine.
 an obvious pedagogical goal in mind—as far as the code is concerned, as a
 matter of fact.
 
-I decided to write little patches in the mid 2000s, to teach myself basic data
-structures and algorithms in C.
+I decided to write a patch against the original codebase in the mid 2000s, to
+teach myself basic data structures and algorithms in C.
 
 ## Installation
 
